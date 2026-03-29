@@ -1,10 +1,13 @@
 import axios from 'axios'
 
 /** Axios instance — all requests routed through Vite's /api proxy */
+
+// ✅ Dynamic base URL (env-based)
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: BASE_URL,
   timeout: 60_000,
-})
+});
 
 // ── Response interceptor: unwrap the success envelope ─────────────────
 api.interceptors.response.use(

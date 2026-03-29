@@ -16,6 +16,7 @@ export default defineConfig({
       "/api": {
         target: "https://aqibniazi-tomato-disease-api.hf.space",
         changeOrigin: true,
+        secure: true,
       },
     },
   },
